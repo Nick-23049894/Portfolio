@@ -5,7 +5,7 @@ html{
     font-family: 'Poppines', sans-serif;
     font-weight: bold;
     scroll-behavior: smooth;
-    scroll-padding-top: 69px;
+    scroll-padding-top: 10%;
 }
 
 .custom-class {
