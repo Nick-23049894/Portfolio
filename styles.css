@@ -21,10 +21,8 @@ html{
 
 .Sectionheader {
     font-size: 4rem; /* Adjust size as needed */
-    font-weight: bold;
     color: #ffffff;
     text-align: center;
-    padding-top: 10px;
 }
 
 nav {
