@@ -58,7 +58,7 @@ nav ul li a::after {
     content: '';
     width: 0%;
     height: 3px;
-    background-color: #061a75;
+    background-color: #000099;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -92,7 +92,7 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 span {
-    color: #061a75;
+    color: #000099;
     font-size: 200%;
 }
 /* Aboutme */
@@ -141,7 +141,7 @@ nav ul li a:hover::after {
 }
 
 .AboutmeDesc {
-    color: #061a75;
+    color: #000099;
     font-size: 1.5em;
     margin-bottom: 15px;
 }
@@ -177,7 +177,7 @@ nav ul li a:hover::after {
 
 /* Resume Link Styling */
 .about-column-text a {
-    color: #061a75;
+    color: #000099;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -209,18 +209,20 @@ nav ul li a:hover::after {
 }
 
 .project-card {
-    background-color: #2c2c2c; /* Dark background for the card */
     border-radius: 8px; /* Rounded corners for the card */
-    overflow: hidden; /* Ensure image fills the card with no overflow */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+    filter: blur(3px);
+    
 }
 
-.project-card h3 {
+
+  
+/* .project-card h3 {
     font-size: 1rem;
     font-weight: 600;
     color: white;
@@ -232,11 +234,11 @@ nav ul li a:hover::after {
     color: #ccc;
     margin: 10px;
     font-weight:600;
-}
+} */
 
 .project-image {
     width: 100%;
-    height: 175px; /* Set a fixed height to ensure it fills the top */
+    height: 225px; /* Set a fixed height to ensure it fills the top */
     object-fit: cover; /* Crop the image to fill the space */
     border-radius: 0; /* No radius for the image */
 }
@@ -279,7 +281,7 @@ nav ul li a:hover::after {
 
 .progress {
     height: 10px;
-    background-color: #061a75; /* Green color */
+    background-color: #000099; /* Green color */
     width: 0;
     transition: width 1s ease-in-out;
 }
