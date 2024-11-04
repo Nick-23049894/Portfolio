@@ -251,16 +251,22 @@ nav ul li a:hover::after {
     flex-wrap: wrap; /* Allow wrapping to next line */
     justify-content: center; /* Center skills within the container */
     gap: 20px; /* Space between skills */
-    align-items: center; /* Center the content vertically */
     padding: 20px 0; /* Add padding above and below the skills */
 }
 
 .skill {
-    width: 200px; /* Fixed width for skill items */
+    width: 150px; /* Adjust width to fit more items in a row */
     margin-bottom: 20px; /* Space below each skill */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    
+    text-align: center; /* Center-align all content inside */
 }
+
+.skill img {
+    width: 100px; /* Set a consistent image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
 .skill:hover {
     transform: translateY(-5px); /* Slightly increase size on hover */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
@@ -270,27 +276,25 @@ nav ul li a:hover::after {
     font-weight: bold;
     margin-bottom: 5px;
     text-align: center; /* Center text for skill names */
+    font-size: 1rem; /* Adjust font size */
 }
 
-.progress-bar {
-    width: 100%;
-    background-color: #444;
-    border-radius: 20px;
-    overflow: hidden;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill {
+        width: 120px; /* Reduce width on smaller screens */
+    }
+    .skill img {
+        width: 80px; /* Scale down the image size */
+    }
 }
 
-.progress {
-    height: 10px;
-    background-color: #000099; /* Green color */
-    width: 0;
-    transition: width 1s ease-in-out;
+@media (max-width: 480px) {
+    .skill {
+        width: 100px; /* Further reduce width on very small screens */
+    }
+    .skill img {
+        width: 70px; /* Smaller image for compact view */
+    }
 }
-
-.skill-level {
-    text-align: right;
-    margin-top: 5px;
-    font-size: 0.9rem;
-    text-align: center; /* Center text for skill levels */
-}
-
 
