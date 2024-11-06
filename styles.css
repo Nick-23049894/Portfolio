@@ -1,11 +1,29 @@
 
-html{
+html {
     background-color: black;
     color: white;
-    font-family: 'Poppines', sans-serif;
+    font-family: 'League Spartan', sans-serif;
     font-weight: bold;
     scroll-behavior: smooth;
     scroll-padding-top: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    width: 40px;
+    padding: 10px;
+}
+#home {
+    background-image: url('imgs/Wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     
+}
+#home img{
+    filter: brightness(50%);
+    opacity: 0.9;
 }
 
 .custom-class {
@@ -93,6 +111,7 @@ nav ul li a:hover::after {
     color: #000099;
     font-size: 200%;
 }
+
 /* Aboutme */
 .row {
     display: flex;
@@ -115,7 +134,9 @@ nav ul li a:hover::after {
     box-sizing: border-box;
     padding: 20px;
 }
-
+.about-column-text h2{
+    font-size: 200%;
+}
 .about-column-text img{
     width: 50px;
     height: auto;
@@ -173,16 +194,7 @@ nav ul li a:hover::after {
     padding-top: 10px;
 }
 
-/* Resume Link Styling */
-.about-column-text a {
-    color: #000099;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
 
-.about-column-text a:hover {
-    color: #ff6347; /* Change color on hover */
-}
 
 /* Responsive Adjustments for Mobile Screens */
 @media (max-width: 480px) {
@@ -197,6 +209,44 @@ nav ul li a:hover::after {
     }
 }
 
+/* Grid for contact */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 20px; /* Space between grid items */
+    margin-top: 20px; /* Space above the grid */
+}
+
+.grid-item {
+    color: #ffffff; /* Text color */
+    border-radius: 12px; /* Rounded corners */
+    padding: 30px 20px; /* Padding inside each grid item */
+    text-align: center; /* Center text inside each item */
+    font-size: 1rem; /* Font size for the text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    position: relative;
+    overflow: hidden; /* Hide gloss effect overflow */
+}
+
+.grid-item:hover {
+    background: rgba(255, 255, 255, 0.1); /* Translucent background on hover */
+    backdrop-filter: blur(5px);
+    transform: scale(1.1);
+}
+
+
+.grid-item img {
+    width: 40px; /* Adjust image size as needed */
+    height: auto;
+    margin-bottom: 15px; /* Space between icon and text */
+}
+
+
 
 /* Projects */
 .grid {
@@ -208,37 +258,99 @@ nav ul li a:hover::after {
 
 .project-card {
     border-radius: 8px; /* Rounded corners for the card */
+    position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    filter: blur(3px);
-    
+/* Bottom-right border on hover */
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%; /* Full width for bottom border */
+    height: 100%; /* Full height for right border */
+    border-bottom: 2px solid #000099; /* Blue bottom border */
+    border-right: 2px solid #000099; /* Blue right border */
+    border-radius: 8px; /* Match the card's border radius */
+    pointer-events: none; /* Prevent interference */
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease; /* Smooth transition */
 }
 
-
-  
-/* .project-card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    margin-top: 10px;
-    margin-left: 10px;
+/* Show border on hover */
+.project-card:hover::after {
+    opacity: 1; /* Show the border on hover */
 }
-.project-card p {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin: 10px;
-    font-weight:600;
-} */
+
 
 .project-image {
     width: 100%;
     height: 225px; /* Set a fixed height to ensure it fills the top */
     object-fit: cover; /* Crop the image to fill the space */
     border-radius: 0; /* No radius for the image */
+    transition: transform 0.5s;
+    border-radius: 8px; /* Rounded corners for the card */
+}
+
+/* Layer overlay styling */
+.layer {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    box-sizing: border-box; /* Include padding in element width */
+    opacity: 0; /* Start as invisible */
+    filter: blur(10px); /* Start with blur */
+    transition: opacity 0.5s ease, filter 0.5s ease; /* Smooth blur and opacity transition */
+}
+
+.project-card:hover .layer {
+    opacity: 1; /* Fade in on hover */
+    filter: blur(0); /* Clear blur on hover */
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+    filter: blur(3px); /* Add slight blur to the background image on hover */
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+.layer p {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.layer a {
+    margin-top: 10px;
+    color: #000099;
+    text-decoration: underline; /* Underline to indicate it’s a link */
+    font-size: 1rem; /* Adjust font size if needed */
+    background: whitesmoke;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    transition: color 0.3s;
+}
+
+.layer a:hover {
+    color: #145cad; /* Change color on hover */
 }
 
 
@@ -266,7 +378,7 @@ nav ul li a:hover::after {
 }
 
 .skill:hover {
-    transform: translateY(-5px); /* Slightly increase size on hover */
+    transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 

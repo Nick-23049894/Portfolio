@@ -4,20 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="ProjectsCss.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b2838;
+            color: #c7d5e0;
+        }
+
+        .game-page {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .game-info {
+            flex: 1;
+        }
+
+        .details p {
+            margin: 5px 0;
+        }
+
+        .carousel {
+            flex: 2;
+        }
+
+        /* Standardize size for iframe and img in preview */
+        .preview iframe, .preview img {
+            width: 800px; /* Increased width */
+            height: 450px; /* Increased height */
+            border: 2px solid #4c6a92;
+        }
+
+        /* Ensure images scale to fit without stretching */
+        .preview img {
+            object-fit: contain;
+            background-color: #1b2838; /* Adds background for letterboxing/pillarboxing effect */
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .thumbnails img {
+            width: 80px;
+            height: 45px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .thumbnails img:hover {
+            border: 2px solid #4c6a92;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="Overview">
-            <h3>Overview</h3>
+    <div class="game-page">
+        <!-- Game Information Section -->
+        <div class="game-info">
+          <h1>Joe Dever's Lone Wolf HD Remastered</h1>
+          <p>For Sommerlund and the Kai! Lone Wolf is back with an exclusive storyline, stunning graphics, and a deep combat system. Make meaningful choices and carve your own path.</p>
+          <div class="details">
+            <p><strong>All Reviews:</strong> Mostly Positive (542)</p>
+            <p><strong>Release Date:</strong> 28 Nov, 2014</p>
+            <p><strong>Developer:</strong> Reply Game Studios</p>
+            <p><strong>Publisher:</strong> 505 Games</p>
+            <p><strong>Tags:</strong> RPG, Adventure, Indie, Story Rich, Fantasy</p>
+          </div>
+        </div>
+      
+        <!-- Carousel Section -->
+        <div class="carousel">
+          <!-- Main Video/Preview -->
+          <div class="preview" id="preview">
+            <!-- YouTube video embedded as the default preview -->
+            <iframe src="https://www.youtube.com/embed/aLz7I7cgojc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <!-- Thumbnail Navigation -->
+          <div class="thumbnails">
+            <img src="" alt="YouTube Video" onclick="showYouTubeVideo('https://www.youtube.com/embed/aLz7I7cgojc')">
+            <img src="imgs/SwiftApp.PNG" alt="Image 1" onclick="showImage('imgs/SwiftApp.PNG')">
+            <img src="imgs/TaskManager.PNG" alt="Image 2" onclick="showImage('imgs/TaskManager.PNG')">
+            <img src="imgs/WCMThumbnail.PNG" alt="Image 3" onclick="showImage('imgs/WCMThumbnail.PNG')">
+          </div>
         </div>
     </div>
-   
 </body>
+<script>
+    function showYouTubeVideo(videoUrl) {
+        const preview = document.getElementById("preview");
+        preview.innerHTML = `<iframe width="800" height="450" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+
+    function showImage(imageSrc) {
+        const preview = document.getElementById("preview");
+        preview.innerHTML = `<img src="${imageSrc}" alt="Preview Image" width="800" height="450">`;
+    }
+</script>
 </html>

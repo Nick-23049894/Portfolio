@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <nav>
+        <img src="imgs/Icons/logo.png" class="logo">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -26,6 +29,7 @@
                     </h1>
                 </div>
             </div>
+            
     </section>
     <!-- about -->
     <section id="about" class="custom-class">
@@ -44,8 +48,39 @@
                 unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
                 Lorem Ipsum passages, and more recently with desktop publishing software like Aldus Page
                 Maker including versions of Lorem Ipsum.</p>
-                <a href="/imgs/Resume.pdf" download><img src="/imgs/Icons/resume2.png" alt="resume"><br>Resume</a>
-                <h2>Socials</h2>
+                <h2>Contact</h2>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <a href="/imgs/Resume.pdf" download>
+                            <img src="imgs/Icons/resume2.png" alt="resume">
+                        </a>
+                        Click to download resume
+                    </div>
+                    <div class="grid-item">
+                        <a href="mailto:23049894@myrp.edu.sg">
+                            <img src="imgs/Icons/contact-mail.png" alt="email-icon">
+                        </a>
+                        23049894@myrp.edu.sg
+                    </div>
+                    <div class="grid-item">
+                        <img src="imgs/Icons/location.png" alt="linkedin-icon">
+                        Singapore, Singapore
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://www.linkedin.com/in/nick-ho-87348a27a/" target="_blank" rel="noopener noreferrer">
+                            <img src="imgs/Icons/linkedin.png" alt="linkedin-icon">
+                        </a>
+                        LinkedIn
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://github.com/Nick-23049894" target="_blank" rel="noopener noreferrer">
+                            <img src="imgs/Icons/github.png" alt="github-icon">
+                        </a>
+                        Github
+                    </div>
+                    
+                    <div class="grid-item"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -53,31 +88,60 @@
 
 
     <section id="projects" class="custom-class">
-        <h2 class="Sectionheader">Featured Projects</h2>
+        <h2 class="Sectionheader">Projects</h2>
         <div class="projects grid">
             <div class="project-card">
                 <img src="imgs/WCMThumbnail.PNG" class="project-image" alt="BrickHaven">
-                <!-- <h3>BrickHaven</h3>
-                <p>A WordPress Website</p> -->
+                <div class="layer">
+                    <h3>BrickHaven</h3>
+                    <p>A WordPress Website</p>
+                    <a href="#">view</a>
+                </div>
             </div>
             <div class="project-card">
                 <img src="imgs/SwiftApp.PNG" class="project-image" alt="Kangroo">
-                <!-- <h3>Kangroo</h3>
-                <p>SwiftApp</p> -->
+                <div class="layer">
+                    <h3>Kangroo</h3>
+                    <p>SwiftApp</p>
+                    <a href="#">view</a>
+                </div>
             </div>
             <div class="project-card">
                 <img src="imgs/TaskManager.PNG" class="project-image" alt="Task Manager">
-                <!-- <h3>Task Manager</h3>
-                <p>Express and Node.js</p> -->
+                <div class="layer">
+                    <h3>Task Manager by Nick</h3>
+                    <p>Express and Node.js</p>
+                    <a href="https://c237-miniproject-irid.onrender.com/" target="_blank" rel="noopener noreferrer">view</a>
+                </div>
             </div>
             <div class="project-card">
                 <img src="imgs/Unity3d.PNG" class="project-image" alt="ImmersiveGA">
-                <!-- <h3>VR Escape Room</h3>
-                <p>Unity3d</p> -->
+                <div class="layer">
+                    <h3>VR Escape Room</h3>
+                    <p>Unity3D</p>
+                    <a href="#">view</a>
+                </div>
             </div>
-            <span><a href="">view all</a></span>
+            <div class="project-card">
+                <img src="imgs/TPP-Video-Thumbnail.PNG" class="project-image" alt="TPP-Video-Thumbnail">
+                <div class="layer">
+                    <h3>Toilet Paper Productions</h3>
+                    <p>side project made with PremierPro</p>
+                    <a href="#">view</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="imgs/RWIPMC-Thumbnail.png" class="project-image" alt="RWIPMC-Thumbnail">
+                <div class="layer">
+                    <h3>Reasons why i play Minecraft.</h3>
+                    <p>side project made with PremierPro</p>
+                    <a href="https://youtu.be/XEskQ4F4h28" target="_blank" rel="noopener noreferrer">view</a>
+                </div>
+            </div>
+            
         </div>
     </section>
+    
     
 
     <section id="skills" class="custom-class">
@@ -96,6 +160,11 @@
             <div class="skill">
                 <img src="imgs/Icons/js.png">
                 <div class="skill-name">JavaScript</div>
+            </div>
+
+            <div class="skill">
+                <img src="imgs/Icons/nodeJS.png">
+                <div class="skill-name">Node.js</div>
             </div>
     
             <div class="skill">
